@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+}
+
+textarea#main {
+    display: block;
+    width: 95%;
+    height: 95%;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2.5%;
+    box-shadow: 2px 2px 4px #888888;
+    outline: none;
+}
+
+.container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.editor {
+    position: float;
+    height: 500px;
+    width: 500px;
+    background-color: #bbb;
+    display: table-cell;
+    /*align-content: center;*/
+}
