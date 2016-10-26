@@ -1,10 +1,10 @@
-let fs = require('fs');
-let {dialog} = require('electron').remote;
+const fs = require('fs');
+const {dialog} = require('electron').remote;
 let path = "";
 
 function saveFile() {
     let text = document.getElementById('main').value;
-    fs.writeFile('./tempfile', text, function(err) {
+    fs.writeFile(path, text, function(err) {
         if(err) {
             return console.log(err);
         }
@@ -21,7 +21,7 @@ function saveAs() {
             }
         });
     })
-}
+};
 
 
 function openFile() {
@@ -32,9 +32,3 @@ function openFile() {
         document.getElementById('main').value = fileString;
     });
 };
-
-
-
-
-
-function eatTacos() {};
