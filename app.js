@@ -1,5 +1,6 @@
-var fs = require('fs');
-var {dialog} = require('electron').remote;
+let fs = require('fs');
+let {dialog} = require('electron').remote;
+let path = "";
 
 function saveFile() {
     let text = document.getElementById('main').value;
@@ -7,21 +8,28 @@ function saveFile() {
         if(err) {
             return console.log(err);
         }
-
-        console.log("The file was saved!");
     });
 
 };
 
+function saveAs() {
+    let text = document.getElementById('main').value;
+    dialog.showSaveDialog(function(path) {
+        fs.writeFile(path, text, function(err) {
+            if(err) {
+                return console.log(err);
+            }
+        });
+    })
+}
+
 
 function openFile() {
-    let path = dialog.showOpenDialog({properties: ['openFile']})[0];
+    path = dialog.showOpenDialog({properties: ['openFile']})[0];
     fs.readFile(path, function(err,data){
         if(err) throw err;
         fileString  = data.toString();
         document.getElementById('main').value = fileString;
-        // return fileString;
-
     });
 };
 
