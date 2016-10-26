@@ -12,6 +12,7 @@ textarea#main {
     margin-top: 2.5%;
     box-shadow: 2px 2px 4px #888888;
     outline: none;
+    font-family: monospace;
 }
 
 .container {

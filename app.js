@@ -32,3 +32,13 @@ function openFile() {
         document.getElementById('main').value = fileString;
     });
 };
+
+window.onload = () => {
+    document.getElementById('fontPicker').onchange = function() {
+        document.getElementById('main').style.fontFamily = this.value;
+    };
+
+    document.getElementById('fontSizePicker').onchange = function() {
+        document.getElementById('main').style.fontSize = this.value;
+    }
+};
